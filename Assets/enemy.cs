@@ -6,6 +6,7 @@ public class enemy : MonoBehaviour
 {
     [SerializeField] Transform patrolPath;
     [SerializeField] float velocidad;
+    float vidas;
     
 
     Transform[] destins;
@@ -66,5 +67,21 @@ public class enemy : MonoBehaviour
         
         
     }
-
+    public float GetVidas()
+    {
+        return vidas;
+    }
+    public void SetVidas(float Newvidas)
+    {
+        vidas = Newvidas;
+    }
+    public void RecibirDahon(float damage)
+    {
+        vidas -= damage;
+        if (vidas>0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    
 }

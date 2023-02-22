@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -24,14 +25,27 @@ public class player : MonoBehaviour
     [SerializeField] int saltosMax;
     int salirosDisponibles;
 
-    Animator anim;
+    [Header("overlabAttack")]
+    [SerializeField] float damgeSuelo;
+    [SerializeField] float damageUp;
+    [SerializeField] float damgeDown;
+    [SerializeField] float distacia;
+    [SerializeField] float defens;
+
+    [Header("overlabAttack")]
+    [SerializeField] Transform spawnOverAtack;
+    [SerializeField] float radioAttack;
+    [SerializeField] LayerMask isDamagebel;
+    [SerializeField]
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         salirosDisponibles = saltosMax;
-        anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -58,7 +72,7 @@ public class player : MonoBehaviour
     
     private void FixedUpdate()
     {
-      if (anim.GetBool("attacking") == false)
+      //if (anim.GetBool("attacking") == false)
       {  
         rb.velocity = new Vector3(h * velocityMovimiento, rb.velocity.y);
         ajuste = Vector3.ClampMagnitude(rb.velocity, velocidadMaxima);
@@ -80,17 +94,17 @@ public class player : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         if (h==1)
         {
-            anim.SetBool("running", true);
+            //anim.SetBool("running", true);
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if(h==-1)
         {
-            anim.SetBool("running", true);
+            //anim.SetBool("running", true);
             transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
-            anim.SetBool("running",false);
+            //anim.SetBool("running",false);
             transform.localScale = new Vector3(1, 1, 1);
         }
     }
@@ -98,14 +112,14 @@ public class player : MonoBehaviour
 
     void Saltar()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && salirosDisponibles > 0 && anim.GetBool("attacking") == false)
+        if (Input.GetKeyDown(KeyCode.Space) && salirosDisponibles > 0) //&& anim.GetBool("attacking") == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            anim.SetBool("falling", true);
+            //anim.SetBool("falling", true);
             rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
             salirosDisponibles--;
-            anim.SetTrigger("jump");
-            anim.SetBool("attacking", false);
+            //anim.SetTrigger("jump");
+            //anim.SetBool("attacking", false);
 
         }
     }
@@ -113,12 +127,21 @@ public class player : MonoBehaviour
     void Ataco()
     {
         
-       anim.SetBool("attacking", true);
+       //anim.SetBool("attacking", true);
         
     }
+    void LanzoAtaqueEstatick()
+    {
+       Collider2D collEnemy = Physics2D.OverlapCircle(pies.position, radio, Suelo);
+        if (collEnemy!=null)
+        {
+            collEnemy.gameObject.GetComponent<enemy>().RecibirDahon(damgeSuelo);
+        }
+    }
+
     void FinAnimationAttack()
     {
-        anim.SetBool("attacking", false);
+        //anim.SetBool("attacking", false);
     }
 
     bool  ItsGrounded()
@@ -129,7 +152,7 @@ public class player : MonoBehaviour
             if (rb.velocity.y<=0)
             {
                 salirosDisponibles = saltosMax;
-                anim.SetBool("falling", false);
+                //anim.SetBool("falling", false);
             }
             return true;
         }
@@ -137,7 +160,7 @@ public class player : MonoBehaviour
         {
             if (rb.velocity.y<0)
             {
-                anim.SetBool("falling", true);
+                //anim.SetBool("falling", true);
             }
         }
         return false;
@@ -146,6 +169,15 @@ public class player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(pies.position, radio);
+        Gizmos.DrawSphere(spawnOverAtack.position, radioAttack);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PuretaNuevoNivel"))
+        {
+            int proxNivel=collision.gameObject.GetComponent<portal>().GetIndiceNuevoNivel();
+            SceneManager.LoadScene(proxNivel);
+        }
     }
 
 }
