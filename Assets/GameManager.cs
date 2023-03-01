@@ -6,18 +6,21 @@ public class GameManager : MonoBehaviour
 {
    public static GameManager gM;
 
- 
-    void Start()
+
+    private void Awake()
     {
         if (true)
         {
-          gM = this;
-          DontDestroyOnLoad(this.gameObject);
+            gM = this;
+            DontDestroyOnLoad(this.gameObject);
 
         }
+
     }
 
- 
+
+
+
     void Update()
     {
         

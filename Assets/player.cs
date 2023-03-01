@@ -147,7 +147,7 @@ public class player : MonoBehaviour
     bool  ItsGrounded()
     {
        Collider2D coll= Physics2D.OverlapCircle(pies.position, radio, Suelo);
-        if (coll!=null)
+        if (coll!=null) 
         {
             if (rb.velocity.y<=0)
             {
