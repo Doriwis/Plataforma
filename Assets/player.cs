@@ -36,7 +36,13 @@ public class player : MonoBehaviour
     [SerializeField] Transform spawnOverAtack;
     [SerializeField] float radioAttack;
     [SerializeField] LayerMask isDamagebel;
-    [SerializeField]
+
+    [Header("iventario")]
+    [SerializeField] string[] invent = new string[20];
+    [SerializeField] float exp;
+    [SerializeField] float inventRadio;
+    [SerializeField] LayerMask itemLayer;
+
 
 
 
@@ -178,6 +184,32 @@ public class player : MonoBehaviour
             int proxNivel=collision.gameObject.GetComponent<portal>().GetIndiceNuevoNivel();
             SceneManager.LoadScene(proxNivel);
         }
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            collision.GetComponent<Item>();
+            Destroy(collision.gameObject);
+            
+        }
     }
 
+    //Items
+    Collider2D DecetItems()
+    {
+       Collider2D newItem= Physics2D.OverlapCircle(transform.position, inventRadio, itemLayer); 
+
+       return newItem;
+      
+    }
+    void SaveItem()
+    {
+        if (DecetItems()!=null)
+        {
+            for (int i = 0; i < invent.Length; i++)
+            {
+                
+            }
+        }
+    }
+
+    
 }
