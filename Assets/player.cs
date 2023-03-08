@@ -38,19 +38,21 @@ public class player : MonoBehaviour
     [SerializeField] LayerMask isDamagebel;
 
     [Header("iventario")]
-    [SerializeField] string[] invent = new string[20];
+    [SerializeField] ItemSO[] invent = new ItemSO[20];
     [SerializeField] float exp;
     [SerializeField] float inventRadio;
     [SerializeField] LayerMask itemLayer;
 
 
-
+    float gravityInicial;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         salirosDisponibles = saltosMax;
+        gravityInicial= rb.gravityScale;
         
     }
 
@@ -95,7 +97,7 @@ public class player : MonoBehaviour
     }
 
 
-    void MovimientYAnimaciones()
+     void MovimientYAnimaciones()
     {
         h = Input.GetAxisRaw("Horizontal");
         if (h==1)
@@ -111,7 +113,6 @@ public class player : MonoBehaviour
         else
         {
             //anim.SetBool("running",false);
-            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -173,9 +174,12 @@ public class player : MonoBehaviour
     }
 
     private void OnDrawGizmos()
-    {
+    { //Detec duelo
         Gizmos.DrawSphere(pies.position, radio);
+        //Area deAttack
         Gizmos.DrawSphere(spawnOverAtack.position, radioAttack);
+        //Iman de objetos
+        Gizmos.DrawSphere(transform.position, inventRadio);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -184,32 +188,64 @@ public class player : MonoBehaviour
             int proxNivel=collision.gameObject.GetComponent<portal>().GetIndiceNuevoNivel();
             SceneManager.LoadScene(proxNivel);
         }
-        if (collision.gameObject.CompareTag("Item"))
+        if (collision.gameObject.Compare)
         {
-            collision.GetComponent<Item>();
             Destroy(collision.gameObject);
             
         }
     }
 
     //Items
-    Collider2D DecetItems()
+    void DecetItems()
     {
-       Collider2D newItem= Physics2D.OverlapCircle(transform.position, inventRadio, itemLayer); 
+       Collider2D newItem= Physics2D.OverlapCircle(transform.position, inventRadio, itemLayer);
 
-       return newItem;
-      
-    }
-    void SaveItem()
-    {
-        if (DecetItems()!=null)
+        if (newItem != null)
         {
             for (int i = 0; i < invent.Length; i++)
             {
-                
+                if (invent[i] != null)
+                {
+                    if (invent[i].name == newItem.gameObject.tag)
+                    {
+
+                    }
+
+                }
+            }
+        }
+
+    }
+    
+
+
+    //Sistema de Rampa
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+           ContactPoint2D puntoConatcto=collision.GetContact(0);
+            Vector2 normalDelPlano = puntoConatcto.normal;
+            float dot = Vector3.Dot(normalDelPlano, Vector3.up);
+            if (ItsGrounded() && dot!=1)
+            {
+                rb.gravityScale = 0;
+            }
+            else
+            {
+                rb.gravityScale = gravityInicial;
             }
         }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            rb.gravityScale = gravityInicial;
 
-    
+        }
+    }
+
+
+
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PuretaNuevoNivel
   - Item
+  - Suelo
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class enemy : MonoBehaviour
 
         destinoactual = destins[indicesDestiny].position;
 
-
+       
 
         StartCoroutine(MoverAPuntoYEsperar());
     }
