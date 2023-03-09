@@ -38,7 +38,7 @@ public class player : MonoBehaviour
     [SerializeField] LayerMask isDamagebel;
 
     [Header("iventario")]
-    [SerializeField] ItemSO[] invent = new ItemSO[20];
+    [SerializeField] Slot[] invent = new Slot[20];
     [SerializeField] float exp;
     [SerializeField] float inventRadio;
     [SerializeField] LayerMask itemLayer;
@@ -59,6 +59,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Saltar();
         
        
@@ -188,7 +189,7 @@ public class player : MonoBehaviour
             int proxNivel=collision.gameObject.GetComponent<portal>().GetIndiceNuevoNivel();
             SceneManager.LoadScene(proxNivel);
         }
-        if (collision.gameObject.Compare)
+        if (collision.gameObject.CompareTag("Item"))
         {
             Destroy(collision.gameObject);
             
@@ -196,20 +197,27 @@ public class player : MonoBehaviour
     }
 
     //Items
-    void DecetItems()
+    void DecetItems(Collider2D item)
     {
-       Collider2D newItem= Physics2D.OverlapCircle(transform.position, inventRadio, itemLayer);
+       ItemSO newitem=item.GetComponent<Item>().yo;
 
-        if (newItem != null)
+        if (newitem != null)
         {
             for (int i = 0; i < invent.Length; i++)
             {
-                if (invent[i] != null)
+                if (invent[i].contador!= 0)
                 {
-                    if (invent[i].name == newItem.gameObject.tag)
+                    if (invent[i].nombre == newitem.nombre)
                     {
-
+                        invent[i].contador ++;
                     }
+
+                }
+                if (invent[i].contador== 0) 
+                {
+                    invent[i].nombre = newitem.nombre;
+                    invent[i].imagen = newitem.spriteImg;
+                    invent[i].contador ++;
 
                 }
             }

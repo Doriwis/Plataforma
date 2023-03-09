@@ -18,7 +18,10 @@ public class Datos : MonoBehaviour
     float saltoMax;
     [Header("Arma")]
     int weapon;
-
+    [Header("Inventario")]
+    int Monedas;
+    float Exp;
+    Slot 
 
 
 
