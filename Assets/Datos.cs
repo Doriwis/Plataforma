@@ -21,7 +21,7 @@ public class Datos : MonoBehaviour
     [Header("Inventario")]
     int Monedas;
     float Exp;
-    Slot 
+    
 
 
 

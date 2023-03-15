@@ -78,7 +78,7 @@ public class enemy : MonoBehaviour
     public void RecibirDahon(float damage)
     {
         vidas -= damage;
-        if (vidas>0)
+        if (vidas<0)
         {
             Destroy(this.gameObject);
         }

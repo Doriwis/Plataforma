@@ -11,6 +11,7 @@ public class Practicas : MonoBehaviour
     {
         StartCoroutine(Iman());
         objetivo = GameObject.FindWithTag("Player");
+        
     }
 
     
