@@ -6,6 +6,11 @@ public class Practicas : MonoBehaviour
 {
    [SerializeField] GameObject objetivo;
     [SerializeField] float velocity;
+
+    [Header("overlap")]
+    [SerializeField]float radio;
+    [SerializeField]Transform origen;
+    [SerializeField]LayerMask capa;
     
     void Start()
     {
@@ -35,6 +40,17 @@ public class Practicas : MonoBehaviour
         
         
     }
-    
+    void CreoOverlap()
+    {
+       Collider2D call =Physics2D.OverlapCircle(origen.position, radio, capa);
+        if (call!=null)
+        {
+            call.GetComponent<Animator>().SetTrigger("duele");
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(origen.position, radio);
+    }
 
 }

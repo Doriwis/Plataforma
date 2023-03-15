@@ -38,7 +38,7 @@ public class player : MonoBehaviour
     [SerializeField] LayerMask isDamagebel;
 
     [Header("iventario")]
-    [SerializeField] Slot[] invent = new Slot[20];
+    [SerializeField] ItemSO[] invent = new ItemSO[20];
     [SerializeField] float exp;
     [SerializeField] float inventRadio;
     [SerializeField] LayerMask itemLayer;
@@ -196,7 +196,9 @@ public class player : MonoBehaviour
         }
     }
 
+
     //Items
+
     void DecetItems(Collider2D item)
     {
        ItemSO newitem=item.GetComponent<Item>().yo;
@@ -210,13 +212,15 @@ public class player : MonoBehaviour
                     if (invent[i].nombre == newitem.nombre)
                     {
                         invent[i].contador ++;
+                        i = invent.Length;
                     }
+                    
 
                 }
                 if (invent[i].contador== 0) 
                 {
                     invent[i].nombre = newitem.nombre;
-                    invent[i].imagen = newitem.spriteImg;
+                    invent[i].spriteImg = newitem.spriteImg;
                     invent[i].contador ++;
 
                 }

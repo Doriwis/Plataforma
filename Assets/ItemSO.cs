@@ -7,4 +7,5 @@ public class ItemSO : ScriptableObject
 {
     [SerializeField] public string nombre;
     [SerializeField] public Sprite spriteImg;
+    [SerializeField] public int contador;
 }
