@@ -82,7 +82,7 @@ public class player : MonoBehaviour
     private void FixedUpdate()
     {
       //if (anim.GetBool("attacking") == false)
-      {  
+      { 
         rb.velocity = new Vector3(h * velocityMovimiento, rb.velocity.y);
         ajuste = Vector3.ClampMagnitude(rb.velocity, velocidadMaxima);
         rb.velocity = new Vector3(ajuste.x, rb.velocity.y);
@@ -154,8 +154,9 @@ public class player : MonoBehaviour
 
     bool  ItsGrounded()
     {
-       Collider2D coll= Physics2D.OverlapCircle(pies.position, radio, Suelo);
-        if (coll!=null) 
+       Collider2D call = Physics2D.OverlapCircle(pies.position, radio, Suelo);
+
+        if (call != null) //exites cesta?
         {
             if (rb.velocity.y<=0)
             {
