@@ -1,51 +1,111 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.6f1 (338bb68529b2) revision 3378102'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19045.2604; Version 2009; 64bit' Language: 'es' Physical Memory: 6071 MB
+OS: 'Windows 10 Pro; OS build 19042.928; Version 2009; 64bit' Language: 'es' Physical Memory: 16306 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Users\arnod\OneDrive\Escritorio\2020.3.6f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.6f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/arnod/OneDrive/Escritorio/Juegos_Unity/Plataforma
+C:/Users/CES/Desktop/Plataforma
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49379
-Successfully changed project path to: C:/Users/arnod/OneDrive/Escritorio/Juegos_Unity/Plataforma
-C:/Users/arnod/OneDrive/Escritorio/Juegos_Unity/Plataforma
+51771
+Successfully changed project path to: C:/Users/CES/Desktop/Plataforma
+C:/Users/CES/Desktop/Plataforma
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 563.34 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 79.23 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.6f1 (338bb68529b2)
-[Subsystems] Discovering subsystems at path C:/Users/arnod/OneDrive/Escritorio/2020.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/arnod/OneDrive/Escritorio/Juegos_Unity/Plataforma/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/CES/Desktop/Plataforma/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 5450 (ID=0x68f9)
+    Renderer: NVIDIA Quadro K620 (ID=0x13bb)
     Vendor:   
-    VRAM:     1012 MB
-    Driver:   15.201.1151.1008
+    VRAM:     2007 MB
+    Driver:   30.0.14.7168
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'C:/Users/arnod/OneDrive/Escritorio/2020.3.6f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Users/arnod/OneDrive/Escritorio/2020.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Users/arnod/OneDrive/Escritorio/2020.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Users/arnod/OneDrive/Escritorio/2020.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.012639 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003307 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 293.02 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 73.64 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.250 seconds
+- Completed reload, in  2.843 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.023417 seconds.
+Registered in 0.002406 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 75.07 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.270 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3109 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.5 MB.
+System memory in use after: 137.7 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 3554.
+Total: 2.769400 ms (FindLiveObjects: 0.340400 ms CreateObjectMapping: 0.148000 ms MarkObjects: 2.143100 ms  DeleteObjects: 0.136500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Game Boy Advance - Metal Slug Advance - Black Hound.png
+  artifactKey: Guid(f4f7913fde443e14ea9e4f62376031a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Boy Advance - Metal Slug Advance - Black Hound.png using Guid(f4f7913fde443e14ea9e4f62376031a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294bb3f6867e5ce24f9d952d417ba9b3') in 0.735250 seconds
+  Import took 0.742413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/main_lev_build.png
+  artifactKey: Guid(08c9d85e257103b4fbc083b46a1a73c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/main_lev_build.png using Guid(08c9d85e257103b4fbc083b46a1a73c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13814ef43008a046c4f3a712045e23a7') in 2.047605 seconds
+  Import took 2.060994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1747.020619 seconds.
+  path: Assets/player.cs
+  artifactKey: Guid(bb2057bb08d6b6b4d861c77d72c8f030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/player.cs using Guid(bb2057bb08d6b6b4d861c77d72c8f030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f324ddd6d8a4346211aac1ffb5587642') in 0.011298 seconds
+  Import took 0.018326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025931 seconds.
+  path: Assets/player.cs
+  artifactKey: Guid(bb2057bb08d6b6b4d861c77d72c8f030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/player.cs using Guid(bb2057bb08d6b6b4d861c77d72c8f030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f324ddd6d8a4346211aac1ffb5587642') in 0.003783 seconds
+  Import took 0.009921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2973.221002 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c602d4445bd9e0e517b9a7c882a2249') in 0.012465 seconds
+  Import took 0.019234 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
