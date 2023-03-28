@@ -45,12 +45,14 @@ public class player : MonoBehaviour
 
 
     float gravityInicial;
+    Animator anim;
     
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         salirosDisponibles = saltosMax;
         gravityInicial= rb.gravityScale;
         
@@ -60,7 +62,7 @@ public class player : MonoBehaviour
     void Update()
     {
         
-        Saltar();
+        AnimSaltar();
         
        
 
@@ -103,34 +105,64 @@ public class player : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         if (h==1)
         {
-            //anim.SetBool("running", true);
+            anim.SetBool("running", true);
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if(h==-1)
         {
-            //anim.SetBool("running", true);
+            anim.SetBool("running", true);
             transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
-            //anim.SetBool("running",false);
+            anim.SetBool("running",false);
         }
     }
 
 
-    void Saltar()
+    void AnimSaltar()
     {
         if (Input.GetKeyDown(KeyCode.Space) && salirosDisponibles > 0) //&& anim.GetBool("attacking") == false)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            //anim.SetBool("falling", true);
-            rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
-            salirosDisponibles--;
-            //anim.SetTrigger("jump");
-            //anim.SetBool("attacking", false);
+            
+            
+
+
+            if (salirosDisponibles>1&& ItsGrounded())
+            {
+                anim.SetBool("falling", false);
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                anim.SetTrigger("jump");
+                salirosDisponibles--;
+                
+            }
+            else if (salirosDisponibles>1 && !ItsGrounded())
+            {
+                Debug.Log("salto1 aire");
+                anim.SetBool("falling", false);
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                anim.SetTrigger("jump2");
+                salirosDisponibles--;
+            }
+            else
+            {
+                Debug.Log("salto2 arire");
+                anim.SetBool("falling", false);
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                anim.SetTrigger("jump2");
+                salirosDisponibles--;
+            }
+            
 
         }
     }
+    public void AddForceJump()
+    {
+       
+
+        rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
+    }
+ 
 
     void Ataco()
     {
@@ -161,7 +193,7 @@ public class player : MonoBehaviour
             if (rb.velocity.y<=0)
             {
                 salirosDisponibles = saltosMax;
-                //anim.SetBool("falling", false);
+                anim.SetBool("falling", false);
             }
             return true;
         }
@@ -169,7 +201,7 @@ public class player : MonoBehaviour
         {
             if (rb.velocity.y<0)
             {
-                //anim.SetBool("falling", true);
+                anim.SetBool("falling", true);
             }
         }
         return false;

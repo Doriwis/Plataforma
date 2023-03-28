@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 09f11809d934c90458ee6431eefc726b
+guid: 42980eedb252b9446b3043c091c4539a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3838832790692478765
-    second: Punk_run_0
+      213: -467307283419413426
+    second: Player_Idle_0
   - first:
-      213: -8873008147394526494
-    second: Punk_run_1
+      213: -5258030014049578038
+    second: Player_Idle_1
   - first:
-      213: -2648082770085516700
-    second: Punk_run_2
+      213: 6236088313408774587
+    second: Player_Idle_2
   - first:
-      213: -8175705092371949694
-    second: Punk_run_3
-  - first:
-      213: -1207745139347562704
-    second: Punk_run_4
-  - first:
-      213: -2765409072087481708
-    second: Punk_run_5
+      213: -1461283530703516926
+    second: Player_Idle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -86,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +92,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +128,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,127 +139,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_run_0
+      name: Player_Idle_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 19
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 74
+        y: 22
+        width: 38
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5261656, y: 0.5179649}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2fb8598516464530800000000000000
-      internalID: 3838832790692478765
+      spriteID: e4445da608ac389f0800000000000000
+      internalID: -467307283419413426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_run_1
+      name: Player_Idle_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 0
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 286
+        y: 22
+        width: 34
+        height: 60
+      alignment: 9
+      pivot: {x: 0.46798617, y: 0.50120944}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e20765e91ebcd480800000000000000
-      internalID: -8873008147394526494
+      spriteID: ac39b3a7f89b707b0800000000000000
+      internalID: -5258030014049578038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_run_2
+      name: Player_Idle_2
       rect:
         serializedVersion: 2
-        x: 101
-        y: 0
-        width: 20
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 492
+        y: 22
+        width: 39
+        height: 60
+      alignment: 9
+      pivot: {x: 0.46153063, y: 0.4992101}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a683130ce104bd0800000000000000
-      internalID: -2648082770085516700
+      spriteID: bb1e1b4e7490b8650800000000000000
+      internalID: 6236088313408774587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_run_3
+      name: Player_Idle_3
       rect:
         serializedVersion: 2
-        x: 145
-        y: 0
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 696
+        y: 22
+        width: 40
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5501343, y: 0.51775616}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28751d4098f0a8e80800000000000000
-      internalID: -8175705092371949694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_run_4
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 0
-        width: 15
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03fdbf5d13a3d3fe0800000000000000
-      internalID: -1207745139347562704
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_run_5
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 0
-        width: 19
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4924597c91b4f99d0800000000000000
-      internalID: -2765409072087481708
+      spriteID: 20bc94cfe5a78bbe0800000000000000
+      internalID: -1461283530703516926
       vertices: []
       indices: 
       edges: []

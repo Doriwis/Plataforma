@@ -1,31 +1,37 @@
 fileFormatVersion: 2
-guid: 0cfe41b357fc95d4aa5cfab3b891670a
+guid: b61de3895f3afc4419070205366ee157
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -507709921326249272
-    second: Punk_attack3_0
+      213: -543497510317795947
+    second: Player_fall_0
   - first:
-      213: -5018502091075246203
-    second: Punk_attack3_1
+      213: -1808493883878589059
+    second: Player_fall_1
   - first:
-      213: -827088177789686455
-    second: Punk_attack3_2
+      213: -6643872878041044790
+    second: Player_fall_2
   - first:
-      213: 555851121021904019
-    second: Punk_attack3_3
+      213: -6595089595184600776
+    second: Player_fall_3
   - first:
-      213: -3525009449754966869
-    second: Punk_attack3_4
+      213: 6686111307641147006
+    second: Player_fall_4
   - first:
-      213: -6657007708786328833
-    second: Punk_attack3_5
+      213: -313781617770483634
+    second: Player_fall_5
   - first:
-      213: 568690364581067506
-    second: Punk_attack3_7
+      213: 3092171418963307308
+    second: Player_fall_6
   - first:
-      213: -7163389290656966605
-    second: Punk_attack3_9
+      213: 8227749615881347314
+    second: Player_fall_7
+  - first:
+      213: 4710678883318121744
+    second: Player_fall_8
+  - first:
+      213: 2467579561076572763
+    second: Player_fall_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +110,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +122,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,7 +134,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,7 +146,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,169 +157,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_attack3_0
+      name: Player_fall_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 17
-        height: 34
+        x: 82
+        y: 31
+        width: 34
+        height: 62
       alignment: 9
-      pivot: {x: 0.50000006, y: 0.5112832}
+      pivot: {x: 0.4712558, y: 0.4841449}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ca486a348044f8f0800000000000000
-      internalID: -507709921326249272
+      spriteID: 595d239d4eb1578f0800000000000000
+      internalID: -543497510317795947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_1
+      name: Player_fall_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 22
-        height: 34
+        x: 290
+        y: 31
+        width: 34
+        height: 60
       alignment: 9
-      pivot: {x: 0.5653917, y: 0.5112832}
+      pivot: {x: 0.5311109, y: 0.49905688}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 587a7e4ffe2ba5ab0800000000000000
-      internalID: -5018502091075246203
+      spriteID: d7d33f8f460f6e6e0800000000000000
+      internalID: -1808493883878589059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_2
+      name: Player_fall_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 24
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4840158, y: 0.5112832}
+        x: 14
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94dabe43fa79584f0800000000000000
-      internalID: -827088177789686455
+      spriteID: ac8e28371d83cc3a0800000000000000
+      internalID: -6643872878041044790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_3
+      name: Player_fall_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 24
-        height: 34
-      alignment: 9
-      pivot: {x: 0.4880123, y: 0.5112832}
+        x: 20
+        y: 13
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 394638846a7c6b700800000000000000
-      internalID: 555851121021904019
+      spriteID: 839a52994f88974a0800000000000000
+      internalID: -6595089595184600776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_4
+      name: Player_fall_4
       rect:
         serializedVersion: 2
-        x: 199
-        y: 0
-        width: 17
-        height: 32
-      alignment: 9
-      pivot: {x: 0.45486808, y: 0.51498556}
+        x: 28
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba4c57de496a41fc0800000000000000
-      internalID: -3525009449754966869
+      spriteID: e7e4cac4fc6d9cc50800000000000000
+      internalID: 6686111307641147006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_5
+      name: Player_fall_5
       rect:
         serializedVersion: 2
-        x: 247
-        y: 0
-        width: 29
-        height: 31
-      alignment: 9
-      pivot: {x: 0.32472175, y: 0.5061876}
+        x: 34
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffaf0ca52ce8d93a0800000000000000
-      internalID: -6657007708786328833
+      spriteID: e403eb7f74935abf0800000000000000
+      internalID: -313781617770483634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_7
+      name: Player_fall_6
       rect:
         serializedVersion: 2
-        x: 295
-        y: 0
-        width: 33
-        height: 32
-      alignment: 9
-      pivot: {x: 0.26168546, y: 0.51198846}
+        x: 222
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2faba00afd464e700800000000000000
-      internalID: 568690364581067506
+      spriteID: c2b6ce3c58999ea20800000000000000
+      internalID: 3092171418963307308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punk_attack3_9
+      name: Player_fall_7
       rect:
         serializedVersion: 2
-        x: 343
-        y: 0
-        width: 35
-        height: 33
-      alignment: 9
-      pivot: {x: 0.215019, y: 0.49999994}
+        x: 228
+        y: 13
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 338dd86b467869c90800000000000000
-      internalID: -7163389290656966605
+      spriteID: 2f0e673eea6de2270800000000000000
+      internalID: 8227749615881347314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_fall_8
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0154c137c71bf5140800000000000000
+      internalID: 4710678883318121744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_fall_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 13
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52cbf8798a9e3220800000000000000
+      internalID: 2467579561076572763
       vertices: []
       indices: 
       edges: []
