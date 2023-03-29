@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Espada
   spriteImg: {fileID: -8363296857730399140, guid: 15e9ad55c5d60ce4c87be7f09d491ac5, type: 3}
+  contador: 1

@@ -23,29 +23,39 @@ public class player : MonoBehaviour
     [SerializeField] float radio;
     [SerializeField] LayerMask Suelo;
     [SerializeField] int saltosMax;
-    int salirosDisponibles;
+    [SerializeField]int salirosDisponibles;
 
-    [Header("overlabAttack")]
-    [SerializeField] float damgeSuelo;
+    [Header("overlabAttackDistans")]
+    [SerializeField]public float vidas;
     [SerializeField] float damageUp;
     [SerializeField] float damgeDown;
     [SerializeField] float distacia;
     [SerializeField] float defens;
 
-    [Header("overlabAttack")]
+    [Header("overlabAttackMele")]
     [SerializeField] Transform spawnOverAtack;
     [SerializeField] float radioAttack;
     [SerializeField] LayerMask isDamagebel;
+    [SerializeField] float damgeSuelo;
+    [SerializeField] float damgeSuelo2;
+    [SerializeField] float damgeSuelo3;
+
 
     [Header("iventario")]
-    [SerializeField] ItemSO[] invent = new ItemSO[20];
-    [SerializeField] float exp;
+    [SerializeField] public ItemSO[] invent = new ItemSO[8];
+    [SerializeField] public float exp;
     [SerializeField] float inventRadio;
     [SerializeField] LayerMask itemLayer;
+
+    [Header("ActoInvent")]
+    [SerializeField]GameObject imaInvent;
 
 
     float gravityInicial;
     Animator anim;
+    [Header("Llaves portales")]
+    [SerializeField]public int indicellaves;
+    
     
 
     // Start is called before the first frame update
@@ -61,29 +71,41 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (vidas>0)
+        {
+            AnimSaltar();
+        }
         
-        AnimSaltar();
         
        
 
         if (ItsGrounded())
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
+                rb.velocity = new Vector2(0,rb.velocity.y);
+                Debug.Log("ataco");
                 Ataco();
             }
                 
         }
-       
-        
+
+        if (!anim.GetBool("attacking"))
+        {
+
             MovimientYAnimaciones();
-        
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            AcitveInvent();
+        }
        
     }
     
     private void FixedUpdate()
     {
-      //if (anim.GetBool("attacking") == false)
+      if (anim.GetBool("attacking") == false&& vidas>0)
       { 
         rb.velocity = new Vector3(h * velocityMovimiento, rb.velocity.y);
         ajuste = Vector3.ClampMagnitude(rb.velocity, velocidadMaxima);
@@ -93,11 +115,7 @@ public class player : MonoBehaviour
     }
 
 
-    void RersetearSalto()
-    {
-        
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-    }
+    
 
 
      void MovimientYAnimaciones()
@@ -124,42 +142,49 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && salirosDisponibles > 0) //&& anim.GetBool("attacking") == false)
         {
-            
-            
+                
 
-
-            if (salirosDisponibles>1&& ItsGrounded())
+            if (salirosDisponibles>1 && ItsGrounded()==true)
             {
+                Debug.Log(" suelo    2");
                 anim.SetBool("falling", false);
+
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 anim.SetTrigger("jump");
-                salirosDisponibles--;
                 
             }
-            else if (salirosDisponibles>1 && !ItsGrounded())
+            else if (salirosDisponibles>1&& ItsGrounded()==false)
             {
-                Debug.Log("salto1 aire");
+                Debug.Log("No suelo    2");
                 anim.SetBool("falling", false);
                 rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
                 anim.SetTrigger("jump2");
                 salirosDisponibles--;
             }
             else
-            {
-                Debug.Log("salto2 arire");
+            {Debug.Log("No suelo     1");
                 anim.SetBool("falling", false);
                 rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
                 anim.SetTrigger("jump2");
                 salirosDisponibles--;
             }
+
+
+            
+            
+                
+            
+            
             
 
         }
     }
     public void AddForceJump()
     {
-       
 
+        salirosDisponibles--;
         rb.AddForce(new Vector3(0, 1, 0) * ForecJumop, ForceMode2D.Impulse);
     }
  
@@ -167,23 +192,69 @@ public class player : MonoBehaviour
     void Ataco()
     {
         
-       //anim.SetBool("attacking", true);
+       anim.SetBool("attacking", true);
         
     }
-    void LanzoAtaqueEstatick()
+   public void OverlabAttack()
     {
-       Collider2D collEnemy = Physics2D.OverlapCircle(pies.position, radio, Suelo);
+       Collider2D collEnemy = Physics2D.OverlapCircle(spawnOverAtack.position, radioAttack, isDamagebel);
         if (collEnemy!=null)
         {
+
             collEnemy.gameObject.GetComponent<enemy>().RecibirDahon(damgeSuelo);
         }
     }
-
-    void FinAnimationAttack()
+    public void OverlabAttack2()
     {
-        //anim.SetBool("attacking", false);
+       Collider2D collEnemy = Physics2D.OverlapCircle(spawnOverAtack.position, radioAttack, isDamagebel);
+        if (collEnemy!=null)
+        {
+
+            collEnemy.gameObject.GetComponent<enemy>().RecibirDahon(damgeSuelo2);
+        }
+    }
+    public void OverlabAttack3()
+    {
+        Collider2D collEnemy = Physics2D.OverlapCircle(spawnOverAtack.position, radioAttack, isDamagebel);
+        if (collEnemy != null)
+        {
+
+            collEnemy.gameObject.GetComponent<enemy>().RecibirDahon(damgeSuelo3);
+        }
     }
 
+    public void FinAnimationAttack()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            anim.SetBool("attacking",true);
+        }
+        else
+        {
+            anim.SetBool("attacking", false);
+        }
+        
+    }
+    public void RealEnd()
+    {
+        anim.SetBool("attacking", false);
+    }
+    public void Hurt(float damgeEnemy)
+    {
+        vidas -= damgeEnemy;
+        if (vidas>0)
+        {
+            rb.velocity = new Vector2(0, 0);
+            anim.SetTrigger("hurt");
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, 0);
+            anim.SetTrigger("dead");
+        }
+       
+        
+    }
     bool  ItsGrounded()
     {
        Collider2D call = Physics2D.OverlapCircle(pies.position, radio, Suelo);
@@ -199,7 +270,7 @@ public class player : MonoBehaviour
         }
         else
         {
-            if (rb.velocity.y<0)
+            if (rb.velocity.y<=0)
             {
                 anim.SetBool("falling", true);
             }
@@ -225,7 +296,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.CompareTag("Item"))
         {
             Destroy(collision.gameObject);
-            
+            DecetItems(collision) ;
         }
     }
 
@@ -238,28 +309,65 @@ public class player : MonoBehaviour
 
         if (newitem != null)
         {
-            for (int i = 0; i < invent.Length; i++)
+            int a=0;
+            while ( a<invent.Length)
             {
-                if (invent[i].contador!= 0)
+                if (invent[a] != null && invent[a].nombre == newitem.nombre)
                 {
-                    if (invent[i].nombre == newitem.nombre)
+                    Debug.Log("reLLENO EN"+a);
+                    invent[a].contador++;
+                    a = invent.Length;
+                }
+                else if(invent[a] == null)
+                {
+                    Debug.Log("LLENO EN de 0 en" + a);
+                    invent[a] = newitem;
+                    a = invent.Length;
+                }
+                else
+                {
+                    a++;
+                    if (a==7)
                     {
-                        invent[i].contador ++;
-                        i = invent.Length;
+                        Debug.Log("LLENO");
+                    }
+                }
+
+            }
+            //for (int i = 0; i < invent.Length; i++)
+            {
+                //if (invent[i]!= null)
+                {
+                    //if (invent[i].nombre == newitem.nombre)
+                    {
+                       // invent[i].contador ++;
+                        //i = invent.Length;
                     }
                     
 
                 }
-                if (invent[i].contador== 0) 
+                //if (invent[i]==null) 
                 {
-                    invent[i].nombre = newitem.nombre;
-                    invent[i].spriteImg = newitem.spriteImg;
-                    invent[i].contador ++;
+                   // invent[i] = newitem;
+                    //i= invent.Length;
 
                 }
             }
         }
 
+    }
+    void AcitveInvent()
+    {
+        if (imaInvent.activeSelf)
+        {
+           
+            imaInvent.SetActive(false);
+        }
+        else
+        {
+            imaInvent.SetActive(true);
+        }
+        
     }
     
 

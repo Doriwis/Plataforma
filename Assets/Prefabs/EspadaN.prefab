@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1225865697260968841}
   m_Layer: 7
   m_Name: EspadaN
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2280ba3229b0a4484de2c7c9131c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yo: {fileID: 0}
+  yo: {fileID: 11400000, guid: 6a3d33a8d72cb7b41b3271aef7cc6ce3, type: 2}
 --- !u!212 &1225865697260968845
 SpriteRenderer:
   m_ObjectHideFlags: 0
