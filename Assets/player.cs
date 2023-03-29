@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+using TMPro;
+
+
+
 
 public class player : MonoBehaviour
 {
+    [SerializeField] int indidcelvl;
     Rigidbody2D rb;
     float h;
 
@@ -55,12 +62,14 @@ public class player : MonoBehaviour
     Animator anim;
     [Header("Llaves portales")]
     [SerializeField]public int indicellaves;
-    
-    
+
+    [SerializeField]TextMeshProUGUI textvida;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        textvida.text = "" + vidas;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         salirosDisponibles = saltosMax;
@@ -242,6 +251,7 @@ public class player : MonoBehaviour
     public void Hurt(float damgeEnemy)
     {
         vidas -= damgeEnemy;
+        textvida.text = "" + vidas;
         if (vidas>0)
         {
             rb.velocity = new Vector2(0, 0);
@@ -254,6 +264,10 @@ public class player : MonoBehaviour
         }
        
         
+    }
+    public void ResetNivel()
+    {
+        SceneManager.LoadScene(indidcelvl);
     }
     bool  ItsGrounded()
     {

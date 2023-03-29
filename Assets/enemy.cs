@@ -6,14 +6,19 @@ public class enemy : MonoBehaviour
 {
     [SerializeField] Transform patrolPath;
     [SerializeField] float velocidad;
-    float vidas;
+    [SerializeField] float vidas;
     
 
     Transform[] destins;
     int indicesDestiny;
     Vector3 destinoactual;
+    Animator anim;
+    [SerializeField]float miDaño;
     void Start()
     {
+
+        anim = GetComponent<Animator>();
+
         destins = new Transform[patrolPath.childCount];
         for (int i = 0; i < destins.Length; i++)
         {
@@ -52,6 +57,7 @@ public class enemy : MonoBehaviour
 
         
     }
+    
     void Contador()
     {
         indicesDestiny++;
@@ -67,21 +73,25 @@ public class enemy : MonoBehaviour
         
         
     }
-    public float GetVidas()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        return vidas;
-    }
-    public void SetVidas(float Newvidas)
-    {
-        vidas = Newvidas;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<player>().Hurt(miDaño);
+        }
     }
     public void RecibirDahon(float damage)
     {
         vidas -= damage;
         if (vidas<0)
         {
-            Destroy(this.gameObject);
+            StopCoroutine(MoverAPuntoYEsperar());
+            anim.SetTrigger("died");
+            
         }
     }
-    
+    public void MeDestruyo()
+    {
+        Destroy(this.gameObject);
+    }
 }
