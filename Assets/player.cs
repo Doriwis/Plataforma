@@ -10,7 +10,12 @@ using TMPro;
 
 
 public class player : MonoBehaviour
-{
+{ 
+    //Terminar salto 
+    //terminar giro 
+    //cammara para el player 
+    //CANVAS
+    //COMBOS
     [SerializeField] int indidcelvl;
     Rigidbody2D rb;
     float h;
@@ -271,6 +276,7 @@ public class player : MonoBehaviour
     }
     bool  ItsGrounded()
     {
+        //POR QUE NO MEJOR RAYCAST????
        Collider2D call = Physics2D.OverlapCircle(pies.position, radio, Suelo);
 
         if (call != null) //exites cesta?
